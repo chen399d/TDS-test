@@ -1,0 +1,12 @@
+local timer = 600 -- 自行設定時間
+--Rejoin
+Players = game:GetService("Players")
+PlaceId, JobId = game.PlaceId, game.JobId
+if #Players:GetPlayers() <= 1 then
+    wait(timer)
+        Players.LocalPlayer:Kick("\nRejoining...")
+		wait()
+		TeleportService:Teleport(PlaceId, Players.LocalPlayer)
+	else
+		TeleportService:TeleportToPlaceInstance(PlaceId, JobId, Players.LocalPlayer)
+	end 
