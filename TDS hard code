@@ -1,33 +1,3 @@
-repeat wait() until game:IsLoaded()
-getgenv().IsMultiStrat = true
-getgenv().Debug = true
-getgenv().MultiStratType = "Hardcore"
-
-getgenv().Maps = {["Crossroads"] = {"Farm", "Commander", "Ace Pilot", "Pyromancer", "Electroshocker"}}
-maplist = {"Crossroads"}
-
-if game.PlaceId == 3260590327 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/banbuskox/dfhtyxvzexrxgfdzgzfdvfdz/main/ckmhjvskfkmsStratFun2", true))()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/banbuskox/dfhtyxvzexrxgfdzgzfdvfdz/main/asjhxnjfdStratFunJoin", true))()
-end
-
-if game.PlaceId == 5591597781 then
-    map = game:GetService("ReplicatedStorage").State.Map.Value
-    game:GetService("Players").PlayerAdded:Connect(function() --back to lobby if it detected player join the game
-        game:GetService("TeleportService"):Teleport(3260590327)
-        wait(10)
-    end)
-    for i,v in pairs(game:GetService("Players"):GetPlayers()) do --back to lobby if there is more than 1 player
-        if i==2 then
-            game:GetService("TeleportService"):Teleport(3260590327)
-            wait(10)
-        end
-    end
-    if not table.find(maplist,map) then
-        game:GetService("TeleportService"):Teleport(3260590327)
-        return
-    end
-    if map == maplist[1] then
 local TDS = loadstring(game:HttpGet("https://raw.githubusercontent.com/banbuskox/dfhtyxvzexrxgfdzgzfdvfdz/main/ckmhjvskfkmsStratFun2", true))() 
 TDS:Loadout("Farm", "Commander", "Ace Pilot", "Pyromancer", "Electroshocker") 
 TDS:Map("Crossroads", true, "Hardcore")
