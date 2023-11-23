@@ -1,4 +1,4 @@
-local timer = 600 -- 自行設定時間
+local timer = 60 -- 自行設定時間
 --Rejoin
 Players = game:GetService("Players")
 PlaceId, JobId = game.PlaceId, game.JobId
